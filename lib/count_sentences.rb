@@ -15,9 +15,6 @@ class String
   end
 
   def count_sentences
-    array = self.to_a
-    array.reduce do |i, v|
-      i.length
-    end
+    self.split(/\.|\?|\!/).delete_if {|x| x.size <2}.size
   end
 end
